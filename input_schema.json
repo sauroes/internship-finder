@@ -54,9 +54,10 @@
       "minimum": 1,
       "maximum": 10
     },
-    "maxResults": {
+       "maxResults": {
       "title": "Maximum results",
       "type": "integer",
+      "description": "Maximum number of listings to save, best-paying first.",
       "default": 100,
       "minimum": 1,
       "maximum": 1000
