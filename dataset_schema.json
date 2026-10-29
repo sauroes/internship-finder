@@ -5,19 +5,72 @@
     "internships": {
       "title": "Remote internships",
       "transformation": {
-        "fields": ["title", "company", "stipendText", "stipendMinMonthly", "stipendMaxMonthly", "duration", "location", "url"]
+        "fields": [
+          "title",
+          "company",
+          "stipendText",
+          "stipendMinMonthly",
+          "stipendMaxMonthly",
+          "duration",
+          "location",
+          "url",
+          "source",
+          "sourceType",
+          "deadline",
+          "officialUrl"
+        ]
       },
       "display": {
         "component": "table",
         "properties": {
-          "title": { "label": "Role", "format": "text" },
-          "company": { "label": "Company", "format": "text" },
-          "stipendText": { "label": "Stipend", "format": "text" },
-          "stipendMinMonthly": { "label": "Min / month (INR)", "format": "number" },
-          "stipendMaxMonthly": { "label": "Max / month (INR)", "format": "number" },
-          "duration": { "label": "Duration", "format": "text" },
-          "location": { "label": "Location", "format": "text" },
-          "url": { "label": "Link", "format": "link" }
+          "title": {
+            "label": "Role",
+            "format": "text"
+          },
+          "company": {
+            "label": "Company",
+            "format": "text"
+          },
+          "stipendText": {
+            "label": "Stipend",
+            "format": "text"
+          },
+          "stipendMinMonthly": {
+            "label": "Min / month (INR)",
+            "format": "number"
+          },
+          "stipendMaxMonthly": {
+            "label": "Max / month (INR)",
+            "format": "number"
+          },
+          "duration": {
+            "label": "Duration",
+            "format": "text"
+          },
+          "location": {
+            "label": "Location",
+            "format": "text"
+          },
+          "url": {
+            "label": "Link",
+            "format": "link"
+          },
+          "source": {
+            "label": "Found via",
+            "format": "text"
+          },
+          "sourceType": {
+            "label": "Site type",
+            "format": "text"
+          },
+          "deadline": {
+            "label": "Deadline",
+            "format": "text"
+          },
+          "officialUrl": {
+            "label": "Official page",
+            "format": "link"
+          }
         }
       }
     }

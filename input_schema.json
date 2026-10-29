@@ -8,14 +8,101 @@
       "type": "array",
       "description": "Internship categories as they appear in Internshala URLs, for example business-development, marketing, artificial-intelligence-ai, operations. Each becomes a work-from-home listing page.",
       "editor": "stringList",
-      "default": ["business-development", "artificial-intelligence-ai", "marketing", "operations", "data-science"],
-      "prefill": ["business-development", "artificial-intelligence-ai", "marketing"]
+      "default": [
+        "business-development",
+        "artificial-intelligence-ai",
+        "marketing",
+        "operations",
+        "data-science"
+      ],
+      "prefill": [
+        "business-development",
+        "artificial-intelligence-ai",
+        "marketing"
+      ]
     },
     "searchUrls": {
       "title": "Custom listing URLs (optional)",
       "type": "array",
       "description": "Paste Internshala listing pages you have already filtered in the browser. These are used in addition to the categories above.",
       "editor": "requestListSources"
+    },
+    "sources": {
+      "title": "Sources",
+      "type": "array",
+      "description": "internshala reads Internshala listing pages. web searches the wider web and reads official company and campus pages.",
+      "editor": "stringList",
+      "default": [
+        "internshala",
+        "web"
+      ],
+      "prefill": [
+        "internshala",
+        "web"
+      ]
+    },
+    "webRoles": {
+      "title": "Roles to search on the web",
+      "type": "array",
+      "description": "Plain role names, e.g. 'business development', 'data analyst'. If empty, the categories above are used.",
+      "editor": "stringList",
+      "prefill": [
+        "business development",
+        "operations"
+      ]
+    },
+    "webLocations": {
+      "title": "Locations / keywords for web search",
+      "type": "array",
+      "description": "Added to each web search, e.g. remote, India, Goa.",
+      "editor": "stringList",
+      "default": [
+        "remote"
+      ]
+    },
+    "includeCampusSites": {
+      "title": "Also search campus websites",
+      "type": "boolean",
+      "description": "Adds searches limited to .ac.in, .edu.in and .edu sites (university and college internship pages).",
+      "default": true
+    },
+    "maxWebUrls": {
+      "title": "Max web pages to read",
+      "type": "integer",
+      "description": "Cap on search-result pages opened (plus up to 10 internship links followed from each careers page).",
+      "default": 40,
+      "minimum": 1,
+      "maximum": 300
+    },
+    "remoteOnly": {
+      "title": "Remote only",
+      "type": "boolean",
+      "description": "Drop listings that are not work-from-home. Turn off to include on-site internships.",
+      "default": true
+    },
+    "includeUnknownStipendWeb": {
+      "title": "Keep web listings with no stipend",
+      "type": "boolean",
+      "description": "Official pages often do not state a stipend, so these are kept by default.",
+      "default": true
+    },
+    "llmExtraction": {
+      "title": "Use Claude to read unusual pages",
+      "type": "boolean",
+      "description": "Fallback for pages with no structured data. Needs an Anthropic API key below.",
+      "default": false
+    },
+    "anthropicApiKey": {
+      "title": "Anthropic API key",
+      "type": "string",
+      "description": "Only used if the option above is on.",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "llmModel": {
+      "title": "Claude model",
+      "type": "string",
+      "default": "claude-haiku-5-5"
     },
     "minStipendPerMonth": {
       "title": "Minimum stipend per month (INR)",
@@ -29,8 +116,14 @@
       "type": "string",
       "description": "'min' keeps a listing only if the bottom of its stipend range meets your minimum (stricter). 'max' keeps it if the top of the range meets it.",
       "editor": "select",
-      "enum": ["min", "max"],
-      "enumTitles": ["Bottom of the range (stricter)", "Top of the range"],
+      "enum": [
+        "min",
+        "max"
+      ],
+      "enumTitles": [
+        "Bottom of the range (stricter)",
+        "Top of the range"
+      ],
       "default": "min"
     },
     "includeUnknownStipend": {
@@ -44,7 +137,15 @@
       "type": "array",
       "description": "Case-insensitive. Listings whose title contains any of these words are dropped.",
       "editor": "stringList",
-      "default": ["sales executive", "telecaller", "data entry", "customer support", "software developer", "java", "php"]
+      "default": [
+        "sales executive",
+        "telecaller",
+        "data entry",
+        "customer support",
+        "software developer",
+        "java",
+        "php"
+      ]
     },
     "maxPagesPerListing": {
       "title": "Pages per listing",
@@ -54,7 +155,7 @@
       "minimum": 1,
       "maximum": 10
     },
-       "maxResults": {
+    "maxResults": {
       "title": "Maximum results",
       "type": "integer",
       "description": "Maximum number of listings to save, best-paying first.",
@@ -67,7 +168,9 @@
       "type": "object",
       "description": "Optional. The defaults work without a proxy for small runs.",
       "editor": "proxy",
-      "prefill": { "useApifyProxy": false }
+      "prefill": {
+        "useApifyProxy": false
+      }
     }
   },
   "required": []
