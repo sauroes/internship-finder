@@ -1,0 +1,73 @@
+{
+  "title": "Remote Internship Finder",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "categories": {
+      "title": "Role categories",
+      "type": "array",
+      "description": "Internship categories as they appear in Internshala URLs, for example business-development, marketing, artificial-intelligence-ai, operations. Each becomes a work-from-home listing page.",
+      "editor": "stringList",
+      "default": ["business-development", "artificial-intelligence-ai", "marketing", "operations", "data-science"],
+      "prefill": ["business-development", "artificial-intelligence-ai", "marketing"]
+    },
+    "searchUrls": {
+      "title": "Custom listing URLs (optional)",
+      "type": "array",
+      "description": "Paste Internshala listing pages you have already filtered in the browser. These are used in addition to the categories above.",
+      "editor": "requestListSources"
+    },
+    "minStipendPerMonth": {
+      "title": "Minimum stipend per month (INR)",
+      "type": "integer",
+      "description": "Listings below this amount are dropped.",
+      "default": 15000,
+      "minimum": 0
+    },
+    "matchOn": {
+      "title": "Compare the minimum against",
+      "type": "string",
+      "description": "'min' keeps a listing only if the bottom of its stipend range meets your minimum (stricter). 'max' keeps it if the top of the range meets it.",
+      "editor": "select",
+      "enum": ["min", "max"],
+      "enumTitles": ["Bottom of the range (stricter)", "Top of the range"],
+      "default": "min"
+    },
+    "includeUnknownStipend": {
+      "title": "Keep listings with no stated stipend",
+      "type": "boolean",
+      "description": "Off by default, since unpaid and performance-based listings are usually not what you want.",
+      "default": false
+    },
+    "excludeTitleKeywords": {
+      "title": "Exclude titles containing",
+      "type": "array",
+      "description": "Case-insensitive. Listings whose title contains any of these words are dropped.",
+      "editor": "stringList",
+      "default": ["sales executive", "telecaller", "data entry", "customer support", "software developer", "java", "php"]
+    },
+    "maxPagesPerListing": {
+      "title": "Pages per listing",
+      "type": "integer",
+      "description": "How many result pages to read for each category or URL.",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 10
+    },
+    "maxResults": {
+      "title": "Maximum results",
+      "type": "integer",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Optional. The defaults work without a proxy for small runs.",
+      "editor": "proxy",
+      "prefill": { "useApifyProxy": false }
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,25 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "internships": {
+      "title": "Remote internships",
+      "transformation": {
+        "fields": ["title", "company", "stipendText", "stipendMinMonthly", "stipendMaxMonthly", "duration", "location", "url"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "title": { "label": "Role", "format": "text" },
+          "company": { "label": "Company", "format": "text" },
+          "stipendText": { "label": "Stipend", "format": "text" },
+          "stipendMinMonthly": { "label": "Min / month (INR)", "format": "number" },
+          "stipendMaxMonthly": { "label": "Max / month (INR)", "format": "number" },
+          "duration": { "label": "Duration", "format": "text" },
+          "location": { "label": "Location", "format": "text" },
+          "url": { "label": "Link", "format": "link" }
+        }
+      }
+    }
+  }
+}

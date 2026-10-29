@@ -1,0 +1,17 @@
+{
+  "actorSpecification": 1,
+  "name": "remote-internship-finder",
+  "title": "Remote Internship Finder (min stipend filter)",
+  "description": "Collects remote internship listings and keeps only those paying at least your minimum monthly stipend.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "meta": {
+    "generatedBy": "Claude.ai with Claude Sonnet 5.5"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "dockerfile": "../Dockerfile"
+}

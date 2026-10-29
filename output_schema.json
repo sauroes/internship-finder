@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Remote Internship Finder output",
+  "properties": {
+    "internships": {
+      "type": "string",
+      "title": "Remote internships",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=internships"
+    }
+  }
+}

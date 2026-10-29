@@ -1,0 +1,18 @@
+{
+  "name": "remote-internship-finder",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Finds remote internships and filters them by a minimum monthly stipend.",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "apify": "3.7.2",
+    "crawlee": "3.18.2"
+  },
+  "devDependencies": {
+    "cheerio": "1.2.0"
+  },
+  "license": "ISC"
+}
