@@ -99,13 +99,11 @@
       "editor": "textfield",
       "isSecret": true
     },
-       "llmModel": {
-     "title": "Claude model",
-     "type": "string",
-     "default": "claude-haiku-5-5",
-     "description": "Claude model used for the optional page-reading fallback. Only used if the option above is on.",
-     "editor": "textfield"
-   },
+    "llmModel": {
+      "title": "Claude model",
+      "type": "string",
+      "default": "claude-haiku-5-5"
+    },
     "minStipendPerMonth": {
       "title": "Minimum stipend per month (INR)",
       "type": "integer",
